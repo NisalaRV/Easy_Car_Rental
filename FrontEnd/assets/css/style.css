@@ -1,0 +1,128 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root
+{
+    --big-font: 3.2rem;
+    --medium-font: 1.8rem;
+    --p-font: 0.941rem;
+}
+
+body {
+    font-family: "poppons",sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 800px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+.btn2{
+    display: inline-block;
+    background-color: #FF6B00;
+    color: #fff;
+    padding: 0.7rem 1.3rem;
+    border-radius: 0.5rem;
+    margin-left: 90px;
+}
+
+
+/*--------------home secion---------------*/
+
+.easy{
+    position: absolute;
+    margin-top: -670px;
+    margin-left: 50px;
+    /*color: wheat;*/
+    color: #FEFEFE;
+    font-size: var(--medium-font);
+}
+.easy span{
+    color:lightgreen ;
+}
+.home-text{
+
+    margin-top: -500px;
+    color: #FEFEFE;
+    margin-left: 50px;
+}
+
+.home-text h1{
+    font-size: var(--big-font );
+    margin-top: -25px;
+    color: wheat;
+}
+
+.home-text h2{
+    font-size: var(--medium-font );
+    font-weight:20;
+    color: honeydew ;
+    margin-bottom: 65px;
+}
+/*.home-text h3 {*/
+/*    font-size: var(--medium-font);*/
+/*    font-weight: 100;*/
+/*   */
+/*}*/
+
+.home-text #enjoy{
+    /*font-size: 1.1rem;*/
+    /*font-size: var(--medium-font);*/
+    font-weight: 300;
+    margin-top: -35px;
+}
+
+.home-content .home-img img{
+    width:100%;
+    /*height: 700px;*/
+    display: block;
+
+}
+.btn{
+    display: inline-block;
+    background-color: #FF6B00;
+    color: #fff;
+    padding: 0.9rem 1.3rem;
+    border-radius: 0.5rem;
+
+}
+
+/*.home-content {*/
+/*    background: rgba(0, 0, 0, 0.5);*/
+/*    padding: 20px;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.register-button {*/
+/*    display: inline-block;*/
+/*    background-color: orange;*/
+/*    color: #fff;*/
+/*    padding: 10px 20px;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    text-decoration: none;*/
+/*    margin-top: 20px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*!* You can add more styles as needed for the rest of your website *!*/
