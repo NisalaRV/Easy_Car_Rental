@@ -1,8 +1,12 @@
-/* styles.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
 
 :root
 {
+    --bg-color:#fff;
+
     --big-font: 3.2rem;
     --medium-font: 1.8rem;
     --p-font: 0.941rem;
@@ -46,22 +50,9 @@ nav a {
     margin-left: 90px;
 }
 
+/*--------------home secion Start---------------*/
 
-/*--------------home secion---------------*/
-
-.easy{
-    position: absolute;
-    margin-top: -670px;
-    margin-left: 50px;
-    /*color: wheat;*/
-    color: #FEFEFE;
-    font-size: var(--medium-font);
-}
-.easy span{
-    color:lightgreen ;
-}
 .home-text{
-
     margin-top: -500px;
     color: #FEFEFE;
     margin-left: 50px;
@@ -94,9 +85,8 @@ nav a {
 
 .home-content .home-img img{
     width:100%;
-    /*height: 700px;*/
-    display: block;
-
+    /*height:100% ;*/
+    display: flex;
 }
 .btn{
     display: inline-block;
@@ -106,23 +96,67 @@ nav a {
     border-radius: 0.5rem;
 
 }
+.easy{
+    position: absolute;
+    margin-top: -670px;
+    margin-left: 50px;
+    /*color: wheat;*/
+    color: #FEFEFE;
+    font-size: var(--medium-font);
+}
+.easy span{
+    color:lightgreen ;
+}
+/*--------------home secion End---------------*/
+/*-----------about Section Start------------*/
+.about{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    gap: 1rem;
+}
+.heading {
+    text-align: center;
+    margin-top: 150px;
+}
+.heading h2{
+    font-size: 30px;
+}
+.heading span{
+    font-size:45px;
+    color:rgb(2, 166, 70);
+    font-weight: 100;
+    /*font-style: italic;*/
+ font-family: Centaur;
+}
+.about-text {
+    position: absolute;
+    font-size: var(--p-font);
+    margin-left: 670px;
+    margin-top: 60px;
 
-/*.home-content {*/
-/*    background: rgba(0, 0, 0, 0.5);*/
-/*    padding: 20px;*/
-/*    border-radius: 5px;*/
-/*}*/
+}
+.about-text h3 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+.about-text h2 {
+    font-size: 30px;
+    color:#FF6B00 ;
+}
+.about-text h4 {
+    font-size: 30px;
+    color:red ;
+}
 
-/*.register-button {*/
-/*    display: inline-block;*/
-/*    background-color: orange;*/
-/*    color: #fff;*/
-/*    padding: 10px 20px;*/
-/*    border: none;*/
-/*    border-radius: 5px;*/
-/*    text-decoration: none;*/
-/*    margin-top: 20px;*/
-/*    font-weight: bold;*/
-/*}*/
 
-/*!* You can add more styles as needed for the rest of your website *!*/
+.about-img img{
+    width: 35%;
+    height: 45%;
+    border-radius: 0.8rem;
+    margin-left: 100px;
+    position: absolute;
+    margin-top: 112px;
+}
+/*-----------about Section End------------*/
