@@ -470,17 +470,6 @@ section{
     width: 25.2em;
 }
 
-@media (max-width: 425px) {
-    .Register .width {
-        width: 100%;
-    }
-}
-
-@media (max-width: 316px) {
-    .cars {
-        display: none;
-    }
-}
 
 .Register .reg-customer-form button[type=button] {
     background: #FF6B00;
