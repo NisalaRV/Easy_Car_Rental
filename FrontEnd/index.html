@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="assets/boostrap/css/bootstrap.css">
     <link rel="stylesheet" href="assets/boostrap/css/bootstrap-utilities.rtl.min.css">
     <link rel="stylesheet" href="assets/boostrap/css/bootstrap-utilities.rtl.css">
+    <link rel="stylesheet" href="assets/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" href="assets/bootstrap-icons/bootstrap-icons.css">
 
 
 </head>
@@ -141,35 +143,94 @@
         <h2>Contact</h2>
         <span>CONTACT US</span>
     </div>
-<div>
- <form action=" " class="email-form p-3 p-md-4 " method="post " role="form ">
-    <div class="row ">
-        <div class="col-xl-6 form-group ">
-            <input class="form-control " id="contactName " name="name " placeholder="Your Name "
-                   required type="text ">
-        </div>
-        <div class="col-xl-6 form-group ">
-            <input class="form-control " id="contactEmail " name="email " placeholder="Your Email "
-                   required type="email ">
-        </div>
-    </div>
-    <div class="form-group ">
-        <input class="form-control " id="contactSubject " name="subject " placeholder="Subject "
-               required type="text ">
-    </div>
-    <div class="form-group ">
-                    <textarea class="form-control " name="message " placeholder="Message " required
-                              rows="5 "></textarea>
-    </div>
+<!--<div>-->
+<!-- <form action=" " class="email-form p-3 p-md-4 " method="post " role="form ">-->
+<!--    <div class="row ">-->
+<!--        <div class="col-xl-6 form-group ">-->
+<!--            <input class="form-control " id="contactName " name="name " placeholder="Your Name "-->
+<!--                   required type="text ">-->
+<!--        </div>-->
+<!--        <div class="col-xl-6 form-group ">-->
+<!--            <input class="form-control " id="contactEmail " name="email " placeholder="Your Email "-->
+<!--                   required type="email ">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group ">-->
+<!--        <input class="form-control " id="contactSubject " name="subject " placeholder="Subject "-->
+<!--               required type="text ">-->
+<!--    </div>-->
+<!--    <div class="form-group ">-->
+<!--        <textarea class="form-control " name="message " placeholder="Message " required-->
+<!--                              rows="5 "></textarea>-->
+<!--    </div>-->
+<!--     <div class="my-3 ">-->
+<!--         <div class="loading ">Loading</div>-->
+<!--         <div class="error-message "></div>-->
+<!--         <div class="sent-message ">Your message has been sent. Thank you!</div>-->
+<!--     </div>-->
 
-    <div class="text-center ">
-        <button class="btnSendForm" type="submit">Send Message</button>
-    </div>
-</form>
-</div>
+<!--    <div class="text-center ">-->
+<!--        <button class="btnSendForm" type="submit">Send Message</button>-->
+<!--    </div>-->
+<!--</form>-->
+<!--</div>-->
+    <div class="container mt-5">
 
+        <div class="info-wrap">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 info">
+                    <i class="bi bi-geo-alt"></i>
+                    <h4>Location:</h4>
+                    <p>No. 200,<br>Galle Road,Panadura.</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                    <i class="bi bi-clock"></i>
+                    <h4>Open Hours:</h4>
+                    <p>Monday-Sunday:<br>11:00 AM - 23:00 PM</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                    <i class="bi bi-envelope"></i>
+                    <h4>Email:</h4>
+                    <p>info@easy.com<br>contact@easy.com</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                    <i class="bi bi-phone"></i>
+                    <h4>Call:</h4>
+                    <p>+94768451258<br>+94768585654</p>
+                </div>
+            </div>
+        </div>
+
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+            </div>
+            <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
+
+    </div>
 </section>
 <!--=======================Contact section end=================-->
+
 
 <script src="assets/boostrap/js/jquery-3.6.1.min.js"></script>
 <script src="assets/boostrap/js/bootstrap.js"></script>
