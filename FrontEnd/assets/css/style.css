@@ -240,7 +240,8 @@ section{
    margin-bottom: 50px;
 }
 
-/*==========================*/
+/*-------------car Section End------------*/
+/*-------------contact Section start-----------*/
 .contact .info-wrap {
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
@@ -360,8 +361,5 @@ section{
 .contact .php-email-form button[type=submit]:hover {
     background: #ffa012;
 }
-
-
-
-/*================================*/
+/*-------------contact Section End-----------*/
 
