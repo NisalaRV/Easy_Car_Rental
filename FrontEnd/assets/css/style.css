@@ -361,5 +361,140 @@ section{
 .contact .php-email-form button[type=submit]:hover {
     background: #ffa012;
 }
-/*-------------contact Section End-----------*/
+/*------------Register customer  Section start-----------*/
+
+.Register .register-img {
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.Register .register-form-bg {
+    background: #dcdde1;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #dcdde1);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #dcdde1);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.Register .reg-customer-form {
+    padding: 40px;
+}
+
+@media (max-width: 575px) {
+    .Register .reg-customer-form {
+        padding: 20px;
+    }
+}
+
+.Register .reg-customer-form h3 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.Register.reg-customer-form h4 {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 20px 0 0 0;
+}
+
+.Register.reg-customer-form p {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.Register .reg-customer-form .error-message {
+    display: none;
+    color: #fff;
+    background: #df1529;
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.Register .reg-customer-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #059652;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.Register .reg-customer-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 24px;
+}
+
+.Register.reg-customer-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #FF6B00;
+    border-top-color: #fff;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+}
+
+.Register .reg-customer-form input,
+.Register .reg-customer-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+}
+
+.Register .reg-customer-form input:focus {
+    border-color: var(--bs-white);
+}
+
+.Register .reg-customer-form input {
+    padding: 3px 15px;
+}
+
+.Register .width {
+    width: 25.2em;
+}
+
+@media (max-width: 425px) {
+    .Register .width {
+        width: 100%;
+    }
+}
+
+@media (max-width: 316px) {
+    .cars {
+        display: none;
+    }
+}
+
+.Register .reg-customer-form button[type=button] {
+    background: #FF6B00;
+    border: 0;
+    padding: 14px 60px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.Register .reg-customer-form button[type=button]:hover {
+    background: #ffb03b;
+}
+
+
+/*-------------Register customer  Section  End-----------*/
 
