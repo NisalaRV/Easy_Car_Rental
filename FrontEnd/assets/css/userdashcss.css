@@ -1,0 +1,97 @@
+/* Custom styles */
+body {
+    background-color: #f8f9fa;
+}
+.sidebar {
+    background-color: #101A32;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+}
+.sidebar a {
+    color: white;
+    padding: 10px 0;
+    display: block;
+}
+.sidebar a:hover {
+    background-color: #232f4e;
+}
+.sidebar-header {
+    text-align: center;
+    padding: 20px;
+}
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+/* Custom styles */
+body {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+.table-container {
+    display: flex;
+    justify-content: center;
+}
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+th {
+    background-color: #f8f9fa;
+}
+/*---------------page title----------*/
+.pageTitle {
+    margin-bottom: 10px;
+}
+
+.pageTitle h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #012970;
+}
+
+/*---------------main----------------*/
+#main {
+    margin-top: 60px;
+    padding: 20px 30px;
+    transition: all 0.3s;
+}
+
+@media (max-width: 1199px) {
+    #main {
+        padding: 20px;
+    }
+}
+
+
+/*---------------- Breadcrumbs--------------- */
+.breadcrumb {
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+    color: #899bbd;
+    font-weight: 600;
+}
+
+.breadcrumb a {
+    color: #899bbd;
+    transition: 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #51678f;
+}
+
+.breadcrumb .breadcrumb-item::before {
+    color: #899bbd;
+}
+
+.breadcrumb .active {
+    color: #51678f;
+    font-weight: 600;
+}
+
