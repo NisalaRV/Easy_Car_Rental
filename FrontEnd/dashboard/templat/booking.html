@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>user dashboard</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="plugins/bower_components/chartist/dist/chartist.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+    <!-- Custom CSS -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Preloader - style you can find in spinners.css -->
+<div class="preloader">
+    <div class="lds-ripple">
+        <div class="lds-pos"></div>
+        <div class="lds-pos"></div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+     data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <header class="topbar" data-navbarbg="skin5">
+        <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+            <div class="navbar-header" data-logobg="skin6">
+                <!-- ============================================================== -->
+                <!-- Logo -->
+                <!-- ============================================================== -->
+                <a class="navbar-brand" href="dashboard.html">
+                    <!-- Logo icon -->
+
+                    <!--End Logo icon -->
+                    <!-- Logo text -->
+                    <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <img src="plugins/images/logo-text.png" alt="homepage" />
+                        </span>
+                </a>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- toggle and nav items -->
+                <!-- ============================================================== -->
+                <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                   href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Logo -->
+            <!-- ============================================================== -->
+            <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+                <!-- ============================================================== -->
+                <!-- Right side toggle and nav items -->
+                <!-- ============================================================== -->
+                <ul class="navbar-nav ms-auto d-flex align-items-center">
+
+                    <!-- ============================================================== -->
+                    <!-- Search -->
+                    <!-- ============================================================== -->
+                    <li class=" in">
+                        <form role="search" class="app-search d-none d-md-block me-3">
+                            <input type="text" placeholder="Search..." class="form-control mt-0">
+                            <a href="" class="active">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </form>
+                    </li>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                    <li>
+                        <a class="profile-pic" href="#">
+                            <img src="plugins/images/users/varun.jpg" alt="user-img" width="36"
+                                 class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                    </li>
+                    <!-- ============================================================== -->
+                    <!-- User profile and search -->
+                    <!-- ============================================================== -->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar" data-sidebarbg="skin6">
+        <!-- Sidebar scroll-->
+        <div class="scroll-sidebar">
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <!-- User Profile-->
+                    <li class="sidebar-item pt-2">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Userdashboard.html"
+                           aria-expanded="false">
+                            <i class="far fa-clock" aria-hidden="true"></i>
+                            <span class="hide-menu">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="userProfile.html"
+                           aria-expanded="false">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span class="hide-menu">Profile</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="rentCar.html"
+                           aria-expanded="false">
+                            <i class="fa fa-table" aria-hidden="true"></i>
+                            <span class="hide-menu">Rent Cars</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link waves-effect waves-dark sidebar-link" href="booking.html"
+                           aria-expanded="false">
+                            <i class="fa fa-table" aria-hidden="true"></i>
+                            <span class="hide-menu">booking</span>
+                        </a>
+                    </li>
+
+                    <li class="text-center p-20 upgrade-btn">
+                        <a href=""
+                           class="btn d-grid btn-danger text-white" target="_blank">
+                            Log Out</a>
+                    </li>
+                </ul>
+
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="page-breadcrumb bg-white">
+            <div class="row align-items-center">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h4 class="page-title">Booking</h4>
+                </div>
+                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                    <div class="d-md-flex">
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Three charts -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="white-box">
+                        <main id="main" class="main">
+
+                            <div class="pageTitle">
+                                <h1>User Dashboard</h1>
+                                <section class="container-fluid mt-3" id="bookingResponse">
+                                    <nav>
+                                        <h3><code>Booking Details</code></h3>
+                                    </nav>
+
+                                    <div class="row mt-3">
+                                        <div class="card info-card">
+
+                                            <!-- start button content-->
+                                            <div class="mb-3 mt-5 d-grid gap-1 d-md-flex justify-content-md-center">
+                                                <form>
+                                                    <div class="col col-lg-12 col-sm-8">
+                                                        <label class="form-label" for="responseRentId">Rent ID<span
+                                                                class="text-danger"></span></label>
+                                                        <input class="form-control" id="responseRentId" readonly
+                                                               name="rent_Id"
+                                                               placeholder="Rent ID" type="text">
+                                                    </div>
+                                                </form>
+                                                <button type="button" class="btn btn-danger btn mt-4 m-4  h-50" id="btnDeleteRental">
+                                                    Delete Rental
+                                                </button>
+                                            </div>
+                                            <!-- end button content-->
+
+                                            <!-- start response table content-->
+                                            <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">
+                                                <div class="col-11 justify-content-around sectionBorder"
+                                                     style="height: 290px; background: white">
+                                                    <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
+                                                        <table class="table table-light table-striped table-bordered table-hover">
+                                                            <thead class="text-dark table-danger text-nowrap text-center  table-bordered">
+                                                            <tr>
+                                                                <th scope="col">Rent ID</th>
+                                                                <th scope="col">User ID</th>
+                                                                <th scope="col">Car ID</th>
+                                                                <th scope="col">Pick-Up Date</th>
+                                                                <th scope="col">Return Date</th>
+                                                                <th scope="col">Return Time</th>
+                                                                <th scope="col">Location</th>
+                                                                <th scope="col">Rent Type</th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody id="tblResponse"></tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end response table content-->
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer text-center"> 2023 ©Copyright Easy Car Rent All Rights Reserved<br><span>
+                      Designed by <a href="">Nisala Ravihara</a>
+            </span>
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- All Jquery -->
+<!-- ============================================================== -->
+<script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap tether Core JavaScript -->
+<script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app-style-switcher.js"></script>
+<script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+<!--Wave Effects -->
+<script src="js/waves.js"></script>
+<!--Menu sidebar -->
+<script src="js/sidebarmenu.js"></script>
+<!--Custom JavaScript -->
+<script src="js/custom.js"></script>
+<!--This page JavaScript -->
+<!--chartis chart-->
+<script src="plugins/bower_components/chartist/dist/chartist.min.js"></script>
+<script src="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+<script src="js/pages/dashboards/dashboard1.js"></script>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+<script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="../../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+<script rel="script" src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+</body>
+
+</html>
