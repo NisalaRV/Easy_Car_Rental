@@ -1,4 +1,4 @@
-package com.easycar.embeded;
+package com.easycar.entity;
 
 import com.easycar.enums.RoleType;
 import lombok.AllArgsConstructor;

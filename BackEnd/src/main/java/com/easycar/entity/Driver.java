@@ -2,6 +2,7 @@ package com.easycar.entity;
 
 
 import com.easycar.embeded.Name;
+import com.easycar.enums.AvailabilityType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,9 +15,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-
-public class Admin{
-
+public class Driver {
     @Id
     private String user_Id;
 
@@ -25,7 +24,11 @@ public class Admin{
     private String contact_No;
     private String address;
     private String email;
-    private String nic;
+    private String nic_No;
+    private String license_No;
+    private String license_Img;
+    @Enumerated(EnumType.STRING)
+    private AvailabilityType driverAvailability;
 
     @OneToOne(cascade = CascadeType.ALL)
     private User user;
