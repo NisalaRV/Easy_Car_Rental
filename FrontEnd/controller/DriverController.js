@@ -58,9 +58,8 @@ function generateDriverID() {
 
 <!--clear input fields Values Method-->
 
-function setTextFieldValuesD(firstName, lastName, contact_No, address, email, nic_No, license_No, license_Img, driverAvailability, user_Name, password) {
-    $("#firstName").val(firstName);
-    $("#lastName").val(lastName);
+function setTextFieldValuesD(fullName, contact_No, address, email, nic_No, license_No, license_Img, driverAvailability, user_Name, password) {
+    $("#fullName").val(fullName);
     $("#contact_No").val(contact_No);
     $("#address").val(address);
     $("#email").val(email);
@@ -86,8 +85,7 @@ function loadAllDrivers() {
 
             for (let i of res.data) {
                 let user_Id = i.user_Id;
-                let firstName = i.name.firstName;
-                let lastName = i.name.lastName;
+                let fullName = i.name.fullName;
                 let contact_No = i.contact_No;
                 let address = i.address;
                 let email = i.email;
@@ -99,7 +97,7 @@ function loadAllDrivers() {
                 let user_Name = i.user.user_Name;
                 let password = i.user.password;
 
-                let row = "<tr><td>" + user_Id + "</td><td>" + firstName + "</td><td>" + lastName + "</td><td>" + contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic_No + "</td><td>" + license_No + "</td><td>" + driverAvailability + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
+                let row = "<tr><td>" + user_Id + "</td><td>" + fullName + "</td><td>" +  contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic_No + "</td><td>" + license_No + "</td><td>" + driverAvailability + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
                 $("#driverTable").append(row);
             }
             blindClickEventsD();
@@ -129,8 +127,7 @@ $("#search_Id").on("keypress", function (event) {
             success: function (res) {
                 console.log(res);
                 $("#user_Id").val(res.user_Id);
-                $("#firstName").val(res.name.firstName);
-                $("#lastName").val(res.name.lastName);
+                $("#fullName").val(res.name.FullName);
                 $("#contact_No").val(res.contact_No);
                 $("#address").val(res.address);
                 $("#email").val(res.email);
@@ -141,7 +138,7 @@ $("#search_Id").on("keypress", function (event) {
                 $("#role_Type").val(res.user.role_Type);
                 $("#user_Name").val(res.user.user_Name);
                 $("#password").val(res.user.password);
-                let row = "<tr><td>" + res.user_Id + "</td><td>" + res.name.firstName + "</td><td>" + res.name.lastName + "</td><td>" + res.contact_No + "</td><td>" + res.address + "</td><td>" + res.email + "</td><td>" + res.nic_No + "</td><td>" + res.license_No + "</td><td>" + res.driverAvailability + "</td><td>" + res.user.role_Type + "</td><td>" + res.user.user_Name + "</td><td>" + res.user.password + "</td></tr>";
+                let row = "<tr><td>" + res.user_Id + "</td><td>" + res.name.FullName + "</td><td>" + res.contact_No + "</td><td>" + res.address + "</td><td>" + res.email + "</td><td>" + res.nic_No + "</td><td>" + res.license_No + "</td><td>" + res.driverAvailability + "</td><td>" + res.user.role_Type + "</td><td>" + res.user.user_Name + "</td><td>" + res.user.password + "</td></tr>";
                 $("#driverTable").append(row);
             },
             error: function (error) {
@@ -160,8 +157,7 @@ $("#search_Id").on("keypress", function (event) {
 function blindClickEventsD() {
     $("#driverTable>tr").on("click", function () {
         let user_Id = $(this).children().eq(0).text();
-        let firstName = $(this).children().eq(1).text();
-        let lastName = $(this).children().eq(2).text();
+        let FullName = $(this).children().eq(1).text();
         let contact_No = $(this).children().eq(3).text();
         let address = $(this).children().eq(4).text();
         let email = $(this).children().eq(5).text();
@@ -173,11 +169,10 @@ function blindClickEventsD() {
         let password = $(this).children().eq(11).text();
 
 
-        console.log(user_Id, firstName, lastName, contact_No, address, email, nic_No, license_No, driverAvailability, role_Type, user_Name,password);
+        console.log(user_Id, FullName, contact_No, address, email, nic_No, license_No, driverAvailability, role_Type, user_Name,password);
 
         $("#user_Id").val(user_Id);
-        $("#firstName").val(firstName);
-        $("#lastName").val(lastName);
+        $("#fullName").val(FullName);
         $("#contact_No").val(contact_No);
         $("#address").val(address);
         $("#email").val(email);
@@ -231,9 +226,8 @@ $("#btnDeleteDriver").click(function () {
 
  <!-- Auto Forces Input Fields Save-->
 
-$("#firstName").focus();
-const regExFirstName = /^[A-z ]{3,20}$/;
-const regExLastName = /^[A-z ]{3,20}$/;
+$("#fullName").focus();
+const regExFullName = /^[A-z ]{3,20}$/;
 const regExContactNum = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
 const regExCusAddress = /^[A-z0-9/ ]{4,30}$/;
 const regExEmailCusAddress = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -244,10 +238,7 @@ const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 
 let driverValidations = [];
 driverValidations.push({
-    reg: regExFirstName, field: $('#firstName'), error: 'Driver First Name Pattern is Wrong'
-});
-driverValidations.push({
-    reg: regExLastName, field: $('#lastName'), error: 'Driver Last Name Pattern is Wrong'
+    reg: regExFullName, field: $('#fullName'), error: 'Driver First Name Pattern is Wrong'
 });
 driverValidations.push({
     reg: regExContactNum, field: $('#contact_No'), error: 'Driver Contact Number Pattern is Wrong'
@@ -271,33 +262,26 @@ driverValidations.push({
     reg: regExPassword, field: $('#password'), error: 'Driver Password Pattern is Wrong'
 });
 //disable tab key of all four text fields using grouping selector in CSS
-$("#firstName,#lastName,#contact_No,#address,#email,#nic_No,#license_No,#user_Name,#password").on('keydown', function (event) {
+$("#fullName,#contact_No,#address,#email,#nic_No,#license_No,#user_Name,#password").on('keydown', function (event) {
     if (event.key === "Tab") {
         event.preventDefault();
     }
 });
 
-$("#firstName,#lastName,#contact_No,#address,#email,#nic_No,#license_No,#user_Name,#password").on('keyup', function (event) {
+$("#fullName,#contact_No,#address,#email,#nic_No,#license_No,#user_Name,#password").on('keyup', function (event) {
     checkValidity(driverValidations);
 });
 
-$("#firstName,#lastName,#contact_No,#address,#email,#nic_No,#license_No,#user_Name,#password").on('blur', function (event) {
+$("#fullName,#contact_No,#address,#email,#nic_No,#license_No,#user_Name,#password").on('blur', function (event) {
     checkValidity(driverValidations);
 });
 
-$("#firstName").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExFirstName, $("#firstName"))) {
-        $("#lastName").focus();
-    } else {
-        focusText($("#firstName"));
+$("#fullName").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExFirstName, $("#fullName"))) {
+        focusText($("#fullName"));
     }
 });
 
-$("#lastName").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExLastName, $("#lastName"))) {
-        focusText($("#contact_No"));
-    }
-});
 
 $("#contact_No").on('keydown', function (event) {
     if (event.key === "Enter" && check(regExContactNum, $("#contact_No"))) {

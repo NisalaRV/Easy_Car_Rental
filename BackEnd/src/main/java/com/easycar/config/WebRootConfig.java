@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan
-@ComponentScan(basePackages = "com.easycar")
+@ComponentScan(basePackages = "com.easycar.service")
 
 public class WebRootConfig {
     public WebRootConfig() {

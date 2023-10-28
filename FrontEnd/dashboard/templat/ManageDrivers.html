@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
     <!-- Custom CSS -->
    <link href="css/style.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -256,15 +257,11 @@
                                                                     <span class="control-error"></span>
                                                                 </div>
                                                                 <div class="mb-sm-0 mt-3 col-md-11">
-                                                                    <label class="form-label" for="firstName">First Name</label>
-                                                                    <input class="form-control" id="firstName" type="text" name="firstName" placeholder="First Name">
+                                                                    <label class="form-label" for="fullName">Full Name</label>
+                                                                    <input class="form-control" id="fullName" type="text" name="fullName" placeholder="Full Name">
                                                                     <span class="control-error"></span>
                                                                 </div>
-                                                                <div class="mb-sm-0 mt-3 col-md-11">
-                                                                    <label class="form-label" for="lastName">Last Name</label>
-                                                                    <input class="form-control" id="lastName" type="text" name="lastName" placeholder="Last Name">
-                                                                    <span class="control-error"></span>
-                                                                </div>
+
                                                                 <div class="mb-sm-0 mt-3 col-md-11">
                                                                     <label class="form-label" for="contact_No">Contact Number</label>
                                                                     <input class="form-control" id="contact_No" type="text" name="contact_No" placeholder="Contact Number">
@@ -347,8 +344,7 @@
                                                                 <thead class="text-dark table-light text-center  table-bordered sticky-top">
                                                                 <tr>
                                                                     <th scope="col">ID</th>
-                                                                    <th scope="col">First Name</th>
-                                                                    <th scope="col">Last Name</th>
+                                                                    <th scope="col">Full Name</th>
                                                                     <th scope="col">Contact No</th>
                                                                     <th scope="col">Address</th>
                                                                     <th scope="col">Email</th>
@@ -405,6 +401,15 @@
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="../../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+    <script rel="script" src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+
+    <script src="../../controller/DriverController.js"></script>
+
 </body>
 
 </html>

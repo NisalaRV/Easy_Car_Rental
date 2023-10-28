@@ -35,9 +35,9 @@ function login(){
                             success:function (res1) {
                             }
                         });
-                        window.location.href = 'reg_UserDashboard.html';
+                        window.location.href = 'Userdashboard.html';
                     } else if (loginRole_Type === "ADMIN" && loginUserName === login.user_Name && loginPassword === login.password) {
-                        window.location.href = '../dashboard/templat/dashboard.html';
+                        window.location.href = 'dashboard.html';
                     }
                     return;
                 }
