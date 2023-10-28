@@ -14,6 +14,7 @@ public class CustomDTO {
     private int count;
 
     public CustomDTO(String lastIndex) {
+
         this.value=lastIndex;
     }
 
