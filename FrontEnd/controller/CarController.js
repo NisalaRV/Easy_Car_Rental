@@ -76,6 +76,7 @@ function setTextFieldValuesC(name, brand, type, front_View, back_View, side_View
     $("#vehicleAvailabilityType").val(vehicleAvailabilityType);
 
     $("#name").focus();
+    checkValidity(carValidations);
     $("#btnSaveCar").attr('disabled', true);
 }
 
