@@ -362,4 +362,120 @@ $("#btnDeleteRental").click(function () {
     });
 });
 
+<!--Auto Forces Input Fields Save -->
 
+$("#userFullName").focus();
+const regExFullName = /^[A-z ]{3,20}$/;
+const regExContactNum = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
+const regExCusAddress = /^[A-z0-9/ ]{4,30}$/;
+const regExEmailCusAddress = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const regExNIC = /^([0-9]{12}|[0-9V]{10})$/;
+const regExDrivingNIC = /^[A-Z0-9-]+$/;
+const regExUserName = /^[A-z0-9/ ]{4,30}$/;
+const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
+
+let customerValidations = [];
+customerValidations.push({
+    reg: regExFullName, field: $('#userFullName'), error: 'Customer Full Name Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExContactNum, field: $('#customerContactNo'), error: 'Customer Contact Number Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExCusAddress, field: $('#customerAddress'), error: 'Customer Address Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExEmailCusAddress, field: $('#customerEmail'), error: 'Customer Email Address Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExNIC, field: $('#customerNic'), error: 'Customer NIC Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExDrivingNIC, field: $('#customerLicence'), error: 'Customer Driving License Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExUserName, field: $('#customerUserName'), error: 'Customer User Name Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExPassword, field: $('#customerPassword'), error: 'Customer Password Pattern is Wrong'
+});
+
+$("#userFullName,#customerContactNo,#customerAddress,#customerEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('keydown', function (event) {
+    if (event.key === "Tab") {
+        event.preventDefault();
+    }
+});
+$("#userFullName,#customerContactNo,#customerAddress,#customerEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('keyup', function (event) {
+    checkValidity(customerValidations);
+});
+
+$("#userFullName,#customerContactNo,#customerAddress,#customerEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('blur', function (event) {
+    checkValidity(customerValidations);
+});
+
+$("#userFullName").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExFullName, $("#userFullName"))) {
+        $("#customerContactNo").focus();
+    } else {
+        focusText($("#userFullName"));
+    }
+});
+
+$("#customerContactNo").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExContactNum, $("#customerContactNo"))) {
+        focusText($("#customerAddress"));
+    }
+});
+
+$("#customerAddress").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExCusAddress, $("#customerAddress"))) {
+        if (event.which === 13) {
+            focusText($("#customerDriverEmail"));
+        }
+    }
+});
+
+$("#customerDriverEmail").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExEmailCusAddress, $("#customerDriverEmail"))) {
+        focusText($("#customerNic"));
+    }
+});
+
+$("#customerNic").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExNIC, $("#customerNic"))) {
+        focusText($("#customerLicence"));
+    }
+});
+
+$("#customerLicence").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExDrivingNIC, $("#customerLicence"))) {
+        if (event.which === 13) {
+            focusText($("#customerUserName"));
+        }
+    }
+});
+
+$("#customerUserName").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExUserName, $("#customerUserName"))) {
+        if (event.which === 13) {
+            focusText($("#customerPassword"));
+        }
+    }
+});
+
+$("#customerPassword").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExPassword, $("#customerPassword"))) {
+        if (event.which === 13) {
+            $('#updateCustomer').focus();
+        }
+    }
+});
+
+
+function setButtonState(value) {
+    if (value > 0) {
+        $("#updateCustomer").attr('disabled', true);
+    } else {
+        $("#updateCustomer").attr('disabled', false);
+    }
+}

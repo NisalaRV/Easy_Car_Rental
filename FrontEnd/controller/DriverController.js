@@ -279,6 +279,7 @@ $("#fullName,#contact_No,#address,#email,#nic_No,#license_No,#user_Name,#passwor
 
 $("#fullName").on('keydown', function (event) {
     if (event.key === "Enter" && check(regExFullName, $("#fullName"))) {
+        $("#contact_No").focus();
         focusText($("#fullName"));
     }
 });

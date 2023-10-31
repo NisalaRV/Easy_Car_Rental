@@ -1,5 +1,6 @@
 
 let userBaseUrl="http://localhost:8080/BackEnd_war/";
+
 loadAllRegUsers();
 $("#btnSaveCustomer").attr('disabled',true);
 $("#btnUpdateCustomer").attr('disabled', true);
@@ -268,6 +269,8 @@ $("#fullName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password")
 
 $("#fullName").on('keydown', function (event) {
   if (event.key === "Enter" && check(regExFullName, $("#fullName"))) {
+    $("#contact_No").focus();
+  }else{
     focusText($("#fullName"));
   }
 });
