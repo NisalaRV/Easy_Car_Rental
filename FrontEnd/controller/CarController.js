@@ -240,8 +240,8 @@ $("#btnDeleteCar").click(function () {
         }
     });
 });
-
-<!--Auto Forces Input Fields Save -->
+//
+// <!--Auto Forces Input Fields Save -->
 
 $("#name").focus();
 const regExBrand = /^[A-z ]{3,20}$/;

@@ -239,7 +239,7 @@ const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 
 let driverValidations = [];
 driverValidations.push({
-    reg: regExFullName, field: $('#fullName'), error: 'Driver First Name Pattern is Wrong'
+    reg: regExFullName, field: $('#fullName'), error: 'Driver Full Name Pattern is Wrong'
 });
 driverValidations.push({
     reg: regExContactNum, field: $('#contact_No'), error: 'Driver Contact Number Pattern is Wrong'
@@ -278,7 +278,7 @@ $("#fullName,#contact_No,#address,#email,#nic_No,#license_No,#user_Name,#passwor
 });
 
 $("#fullName").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExFirstName, $("#fullName"))) {
+    if (event.key === "Enter" && check(regExFullName, $("#fullName"))) {
         focusText($("#fullName"));
     }
 });

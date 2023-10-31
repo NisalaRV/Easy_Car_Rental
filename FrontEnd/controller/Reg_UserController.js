@@ -228,7 +228,7 @@ const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 
 let customerValidations = [];
 customerValidations.push({
-  reg: regExFullName, field: $('#fullName'), error: 'Customer First Name Pattern is Wrong'
+  reg: regExFullName, field: $('#fullName'), error: 'Customer Full Name Pattern is Wrong'
 });
 customerValidations.push({
   reg: regExContactNum, field: $('#contact_No'), error: 'Customer Contact Number Pattern is Wrong'
