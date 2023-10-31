@@ -65,18 +65,18 @@ function loadAllRent() {
         }
     });
 }
-
-$(document).ready(function () {
-    $("#profileDetails").css('display', 'none');
-    $("#driverShedule").css('display', 'block');
-});
-
-$("#driverDashboardSection").click(function () {
-    $("#profileDetails").css('display', 'none');
-    $("#driverShedule").css('display', 'block');
-});
-
-$("#myDetailsSection,#Mypro,#Mypro1").click(function () {
-    $("#profileDetails").css('display', 'block');
-    $("#driverShedule").css('display', 'none');
-});
+//
+// $(document).ready(function () {
+//     $("#profileDetails").css('display', 'none');
+//     $("#driverShedule").css('display', 'block');
+// });
+//
+// $("#driverDashboardSection").click(function () {
+//     $("#profileDetails").css('display', 'none');
+//     $("#driverShedule").css('display', 'block');
+// });
+//
+// $("#myDetailsSection,#Mypro,#Mypro1").click(function () {
+//     $("#profileDetails").css('display', 'block');
+//     $("#driverShedule").css('display', 'none');
+// });
