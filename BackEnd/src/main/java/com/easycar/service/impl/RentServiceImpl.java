@@ -33,14 +33,15 @@ public class RentServiceImpl implements RentService {
     @Autowired
     private RentRepo rentRepo;
 
-    @Autowired
-    private ModelMapper mapper;
 
     @Autowired
     private CarRepo carRepo;
 
     @Autowired
     private DriverRepo driverRepo;
+    @Autowired
+    private ModelMapper mapper;
+
 
 
     @Override

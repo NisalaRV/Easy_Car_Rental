@@ -139,7 +139,7 @@ $("#search_Id").on("keypress", function (event) {
                 $("#role_Type").val(res.user.role_Type);
                 $("#user_Name").val(res.user.user_Name);
                 $("#password").val(res.user.password);
-                let row = "<tr><td>" + res.user_Id + "</td><td>" + res.name.FullName + "</td><td>" + res.contact_No + "</td><td>" + res.address + "</td><td>" + res.email + "</td><td>" + res.nic_No + "</td><td>" + res.license_No + "</td><td>" + res.driverAvailability + "</td><td>" + res.user.role_Type + "</td><td>" + res.user.user_Name + "</td><td>" + res.user.password + "</td></tr>";
+                let row = "<tr><td>" + res.user_Id + "</td><td>" + res.FullName + "</td><td>" + res.contact_No + "</td><td>" + res.address + "</td><td>" + res.email + "</td><td>" + res.nic_No + "</td><td>" + res.license_No + "</td><td>" + res.driverAvailability + "</td><td>" + res.user.role_Type + "</td><td>" + res.user.user_Name + "</td><td>" + res.user.password + "</td></tr>";
                 $("#driverTable").append(row);
             },
             error: function (error) {
@@ -280,6 +280,7 @@ $("#fullName,#contact_No,#address,#email,#nic_No,#license_No,#user_Name,#passwor
 $("#fullName").on('keydown', function (event) {
     if (event.key === "Enter" && check(regExFullName, $("#fullName"))) {
         $("#contact_No").focus();
+        }else {
         focusText($("#fullName"));
     }
 });

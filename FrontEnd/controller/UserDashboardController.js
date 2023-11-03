@@ -1,5 +1,6 @@
 let RentbaseUrl ="http://localhost:8080/BackEnd_war/";
 
+
 loadAllRent();
 $("#updateCustomer").attr('disabled', true);
 
@@ -278,7 +279,7 @@ $.ajax({
         for (var cus of res.data) {
             if (user === cus.user_Id) {
                 $("#cusUserID").val(cus.user_Id);
-                $("#userFullName").val(cus.name.fullName);
+                $("#userFullName").val(cus.fullName);
                 $("#customerContactNo").val(cus.contact_No);
                 $("#customerAddress").val(cus.address);
                 $("#customerEmail").val(cus.email);
@@ -480,58 +481,58 @@ function setButtonState(value) {
     }
 }
 
-
-$(document).ready(function () {
-    $("#bookingResponse").css('display', 'block');
-    $("#rentDetails").css('display', 'none');
-    $("#profileDetails").css('display', 'none');
-});
-
-$("#userDashboardSection").click(function () {
-    $("#bookingResponse").css('display', 'block');
-    $("#rentDetails").css('display', 'none');
-    $("#profileDetails").css('display', 'none');
-});
-
-$("#rentSection").click(function () {
-    $("#bookingResponse").css('display', 'none');
-    $("#rentDetails").css('display', 'block');
-    $("#profileDetails").css('display', 'none');
-});
-
-$("#bookingResponseSection").click(function () {
-    $("#bookingResponse").css('display', 'block');
-    $("#rentDetails").css('display', 'none');
-    $("#profileDetails").css('display', 'none');
-});
-
-$("#myDetailsSection,#userDetails,#userDetailss").click(function () {
-    $("#bookingResponse").css('display', 'none');
-    $("#rentDetails").css('display', 'none');
-    $("#profileDetails").css('display', 'block');
-});
-<!-- Initialize Swiper -->
-const progressCircle = document.querySelector(".autoplay-progress svg");
-const progressContent = document.querySelector(".autoplay-progress span");
-var swiper = new Swiper(".mySwiper", {
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true
-    },
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-    },
-    on: {
-        autoplayTimeLeft(s, time, progress) {
-            progressCircle.style.setProperty("--progress", 1 - progress);
-            progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-        }
-    }
-});
+//
+// $(document).ready(function () {
+//     $("#bookingResponse").css('display', 'block');
+//     $("#rentDetails").css('display', 'none');
+//     $("#profileDetails").css('display', 'none');
+// });
+//
+// $("#userDashboardSection").click(function () {
+//     $("#bookingResponse").css('display', 'block');
+//     $("#rentDetails").css('display', 'none');
+//     $("#profileDetails").css('display', 'none');
+// });
+//
+// $("#rentSection").click(function () {
+//     $("#bookingResponse").css('display', 'none');
+//     $("#rentDetails").css('display', 'block');
+//     $("#profileDetails").css('display', 'none');
+// });
+//
+// $("#bookingResponseSection").click(function () {
+//     $("#bookingResponse").css('display', 'block');
+//     $("#rentDetails").css('display', 'none');
+//     $("#profileDetails").css('display', 'none');
+// });
+//
+// $("#myDetailsSection,#userDetails,#userDetailss").click(function () {
+//     $("#bookingResponse").css('display', 'none');
+//     $("#rentDetails").css('display', 'none');
+//     $("#profileDetails").css('display', 'block');
+// });
+// <!-- Initialize Swiper -->
+// const progressCircle = document.querySelector(".autoplay-progress svg");
+// const progressContent = document.querySelector(".autoplay-progress span");
+// var swiper = new Swiper(".mySwiper", {
+//     spaceBetween: 30,
+//     centeredSlides: true,
+//     autoplay: {
+//         delay: 2500,
+//         disableOnInteraction: false
+//     },
+//     pagination: {
+//         el: ".swiper-pagination",
+//         clickable: true
+//     },
+//     navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev"
+//     },
+//     on: {
+//         autoplayTimeLeft(s, time, progress) {
+//             progressCircle.style.setProperty("--progress", 1 - progress);
+//             progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+//         }
+//     }
+// });

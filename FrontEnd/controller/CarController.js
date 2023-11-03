@@ -1,5 +1,6 @@
 
 let carBaseUrl = "http://localhost:8080/BackEnd_war/";
+
 loadAllCars();
 
 $("#btnSaveCar").attr('disabled', true);

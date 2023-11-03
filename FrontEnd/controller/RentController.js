@@ -1,8 +1,11 @@
 
 let RentAllManageBaseUrl="http://localhost:8080/BackEnd_war/";
+
 loadAllRentDetails();
 
-<!-- All Rent Details load-->
+/**
+ * All Rent Details load
+ **/
 
 function loadAllRentDetails() {
     $("#rentAllDetails").empty();
@@ -18,17 +21,18 @@ function loadAllRentDetails() {
             for (var i of res.data) {
                 let row = "<tr><td>" + i.rentID + "</td><td>" + i.rentDetails.at().carID + "</td><td>" + i.regUser.user_Id + "</td><td>" + i.rentDetails.at().driverID + "</td><td>" + i.requestType + "</td><td>" + i.rentType + "</td><td>" + i.pickUpDate + "</td><td>" + i.pickUpTime + "</td><td>" + i.returnTime + "</td><td>" + i.returnDate + "</td><td>" + i.location + "</td></tr>";
                 $("#rentAllDetails").append(row);
-                $("#retManage").append(now);
-                blindClickEvents();
+                $("#retManage").append(row);
+                blindClickEventsRent();
             }
         }
     });
 }
 
-<!-- Search Rents-->
-
+/**
+ * Search Rents
+ * */
 $("#search_Id").on("keypress", function (event) {
-    if (event.which === 13){
+    if (event.which === 13) {
         var search = $("#search_Id").val();
         $("#retManage").empty();
         $.ajax({
@@ -45,13 +49,14 @@ $("#search_Id").on("keypress", function (event) {
             },
             error: function (error) {
                 loadAllRentDetails();
-                let message=JSON.parse(error.responseText).message;
+                let message = JSON.parse(error.responseText).message;
                 emptyMassage(message);
             }
         })
     }
+
 });
-let catID;
+let carID;
 
 function blindClickEventsRent() {
     $("#retManage>tr").on("click", function () {
@@ -113,27 +118,29 @@ $("#btnAccept").on("click", function () {
 
 });
 
-$("#btnReject").on("click",function (){
-    let rentID =$("#requestRentId").val();
-    let driverID=$("#driverId").val();
+$("#btnReject").on("click", function () {
+    let rentID = $("#requestRentId").val();
+    let driverID = $("#driverId").val();
     $.ajax({
         url: RentAllManageBaseUrl + "rent/rentReject/?rentID=" + rentID + "&driverId=" + driverID,
         method: "post",
         dataType: "json",
-        success: function (res){
-            saveUpdateAlert("Booking Reject",res.message);
+        success: function (res) {
+            saveUpdateAlert("Booking Reject", res.message);
             $("#retManage").empty();
             loadAllRentDetails();
         },
-        error: function (error){
-            let message =JSON.parse(error.responseText).message;
+        error: function (error) {
+            let message = JSON.parse(error.responseText).message;
             emptyMassage(message);
         }
     });
+
 });
 
-<!-- Payment ID Generator-->
-
+/**
+ * Payment ID Generator
+ * */
 function generatePaymentID() {
     $("#paymentID").val("PAY-001");
     $.ajax({
@@ -160,10 +167,11 @@ function generatePaymentID() {
 }
 
 generatePaymentID();
-
-<!-- Local Date And Time set
-     Enter Cash and Balance display-->
-
+/**
+ * Logics
+ * Local Date And Time set
+ * Enter Cash and Balance display
+ * */
 $(document).ready(function () {
     var now = new Date();
     var year = now.getFullYear();
@@ -180,7 +188,12 @@ $(document).ready(function () {
     $('#time').val(time); // set time text in element with ID "time"
 });
 
-<!-- Rent, Enter Cash and Balance display-->
+
+/**
+ * Logics
+ * Rent
+ * Enter Cash and Balance display
+ * */
 function loadAllCars() {
     $.ajax({
         url: RentAllManageBaseUrl + "car/searchCar/?car_Id=" + carID,
@@ -193,9 +206,9 @@ function loadAllCars() {
             let freeMileage = res.free_Mileage;
 
             $(document).on("change keyup blur","#days,#lostDamage,#rentFee,#driverFee,#mileage", function () {
-
-                <!-- Payment Details-->
-
+                /**
+                 * Payment Details
+                 * */
                 let lostDamage = $('#lostDamage').val();
                 let carFee = $('#rentFee').val();
                 let driverFee = $('#driverFee').val();
@@ -228,30 +241,35 @@ function loadAllCars() {
 }
 
 $("#btnPay").on("click", function () {
+    /*let rentID = $("#rentID").val();
+    // let formData = new FormData($("#PayementToRent")[0]);
+    let formData = $("#PayementToRent").serialize();
+    console.log(formData);*/
 
-    let paymentId =$("#paymentID").val();
+    let paymentId = $("#paymentID").val();
     let rentID = $("#rentID").val();
     let paymentType = $("#paymentType").val();
     let paymentDate = $("#date").val();
     let paymentTime = $("#time").val();
     let lostDamage = $("#lostDamage").val();
-    let carFee=$("#rentFee").val();
-    let driverFee=$("#driverFee").val();
-    let total=$("#total").val();
+    let carFee = $("#rentFee").val();
+    let driverFee = $("#driverFee").val();
+    let total = $("#total").val();
 
-    var paymentOb ={
+    var paymentOb = {
         paymentID: paymentId,
-        rentID:{
-            rentID:rentID
+        rentID: {
+            rentID: rentID
         },
-        paymentType:paymentType,
-        data:paymentDate,
-        time:paymentTime,
+        paymentType: paymentType,
+        date: paymentDate,
+        time: paymentTime,
         lostDamage: lostDamage,
         rentFee: carFee,
         driverFee: driverFee,
         total: total,
     }
+
 
     $.ajax({
         url: RentAllManageBaseUrl + "payment/?rentID=" + rentID,
@@ -259,12 +277,12 @@ $("#btnPay").on("click", function () {
         data: JSON.stringify(paymentOb),
         dataType: "json",
         contentType: "application/json",
-        success: function (res){
+        success: function (res) {
             console.log(res)
             saveUpdateAlert("Payment", res.message);
             generatePaymentID();
         },
-        error : function (error){
+        error: function (error) {
             unSuccessUpdateAlert("Payment", JSON.parse(error.responseText).message);
         }
     });
@@ -275,16 +293,13 @@ $.ajax({
     method: "GET",
     dataType: "json",
     contentType: "application/json",
-    success:function (res){
+    success: function (res) {
         console.log(res.data);
         for (let i of res.data) {
             let row = "<tr><td>" + i.paymentID + "</td><td>" + i.rentID.rentID + "</td><td>" + i.rentID.regUser.user_Id + "</td><td>" + i.paymentType + "</td><td>" + i.date + "</td><td>" + i.time + "</td><td>" + i.total + "</td></tr>";
             $("#paymentTable").append(row);
         }
     },
-    error:function (error){
-
+    error: function (error) {
     }
 });
-
-

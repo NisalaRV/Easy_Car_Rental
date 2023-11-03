@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -171,7 +172,7 @@
                         <!--                            </a>-->
                         <!--                        </li>-->
                         <li class="text-center p-20 upgrade-btn">
-                            <a href=""
+                            <a href="../../HomePage/forms/login.html"
                                class="btn d-grid btn-danger text-white" target="_blank">
                                 Log Out</a>
                         </li>
@@ -225,9 +226,11 @@
                                             style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                     </div>
                                 </li>
-                                <li class="ms-auto"><span class="counter text-success">0</span></li>
+                                <li class="ms-auto"><span class="counter text-success"> <h2 id="carCount">0</h2></span></li>
+
                             </ul>
                         </div>
+
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="white-box analytics-info">
@@ -238,7 +241,7 @@
                                             style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                     </div>
                                 </li>
-                                <li class="ms-auto"><span class="counter text-purple">0</span></li>
+                                <li class="ms-auto"><span class="counter text-purple"> <h3 id="availableCarCount">0</h3></span></li>
                             </ul>
                         </div>
                     </div>
@@ -251,7 +254,7 @@
                                             style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                     </div>
                                 </li>
-                                <li class="ms-auto"><span class="counter text-info">0</span>
+                                <li class="ms-auto"><span class="counter text-info">  <h3 id="reservedCarCount">0</h3></span>
                                 </li>
                             </ul>
                         </div>
@@ -265,7 +268,7 @@
                                                                      style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                     </div>
                                 </li>
-                                <li class="ms-auto"><span class="counter text-info">0</span>
+                                <li class="ms-auto"><span class="counter text-info"> <h3 id="driverCount">0</h3></span>
                                 </li>
                             </ul>
                         </div>
@@ -275,10 +278,10 @@
                         <ul class="list-inline two-part d-flex align-items-center mb-0">
                             <li>
                                 <div id="sparklinedash5">
-                                    <canvas width="67" height="30" style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
+                                    <canvas width="67" height="30"       style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                 </div>
                             </li>
-                            <li class="ms-auto"><span class="counter text-info">0</span>
+                            <li class="ms-auto"><span class="counter text-info"> <h3 id="availableDriverCount">0</h3></span>
                             </li>
                         </ul>
                     </div>
@@ -291,7 +294,7 @@
                                                                  style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                 </div>
                             </li>
-                            <li class="ms-auto"><span class="counter text-info">0</span>
+                            <li class="ms-auto"><span class="counter text-info"> <h3 id="unAvailableDriverCount">0</h3></span>
                             </li>
                         </ul>
                     </div>
@@ -304,7 +307,7 @@
                                                                  style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                 </div>
                             </li>
-                            <li class="ms-auto"><span class="counter text-info">0</span>
+                            <li class="ms-auto"><span class="counter text-info">  <h3 id="customerCount">0</h3></span>
                             </li>
                         </ul>
                     </div>
@@ -317,7 +320,7 @@
                                                                  style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                 </div>
                             </li>
-                            <li class="ms-auto"><span class="counter text-info">0</span>
+                            <li class="ms-auto"><span class="counter text-info">   <h3 id="maintainCarCount">0</h3></span>
                             </li>
                         </ul>
                     </div>
@@ -343,7 +346,7 @@
                                                                  style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                 </div>
                             </li>
-                            <li class="ms-auto"><span class="counter text-info">0</span>
+                            <li class="ms-auto"><span class="counter text-info">  <h3 id="underMaintainCarCount">0</h3></span>
                             </li>
                         </ul>
                     </div>
@@ -356,7 +359,7 @@
                                                                  style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                 </div>
                             </li>
-                            <li class="ms-auto"><span class="counter text-info">0</span>
+                            <li class="ms-auto"><span class="counter text-info">  <h3 id="BookingCount">0</h3></span>
                             </li>
                         </ul>
                     </div>
@@ -369,7 +372,7 @@
                                                                  style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
                                 </div>
                             </li>
-                            <li class="ms-auto"><span class="counter text-info">0</span>
+                            <li class="ms-auto"><span class="counter text-info">  <h3 id="BookingPendingCount">0</h3></span>
                             </li>
                         </ul>
                     </div>
@@ -694,6 +697,9 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    <script src="../../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+    <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
+
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -705,25 +711,22 @@
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
-    <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="../../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+
     <!--This page JavaScript -->
+    <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
+
     <!--chartis chart-->
     <script src="plugins/bower_components/chartist/dist/chartist.min.js"></script>
     <script src="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="js/pages/dashboards/dashboard1.js"></script>
-    <script src="../../controller/CarController.js"></script>
 
     <!--DashBoard Js -->
     <script src="../../controller/DashBoardController.js"></script>
 
-
     <!-- Util JS File -->
     <script src="../../util/alert.js"></script>
     <script src="../../util/validation.js"></script>
-
-
 
 </body>
 

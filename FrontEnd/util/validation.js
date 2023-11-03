@@ -26,6 +26,16 @@ function setTextError(txtField, error) {
     }
 }
 
+
+function textSuccess(txtField, error) {
+    if (txtField.val().length <= 0) {
+        defaultText(txtField, "");
+    } else {
+        txtField.css('border', '2px solid green');
+        txtField.parent().children('span').text(error);
+    }
+}
+
 function defaultText(txtField,error){
     txtField.css("border", "1px solid #ced4da");
     txtField.parent().children('span').text(error);

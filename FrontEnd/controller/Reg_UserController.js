@@ -82,7 +82,7 @@ function loadAllRegUsers() {
 
       for (let i of res.data) {
         let user_Id = i.user_Id;
-        let fullName= i.name.fullName;
+        let fullName= i.fullName;
         let contact_No = i.contact_No;
         let address = i.address;
         let email = i.email;
@@ -121,7 +121,7 @@ $("#search_Id").on("keypress", function (event) {
       success: function (res) {
         console.log(res);
         $("#user_Id").val(res.user_Id);
-        $("#fullName").val(res.name.fullName);
+        $("#fullName").val(res.fullName);
         $("#contact_No").val(res.contact_No);
         $("#address").val(res.address);
         $("#email").val(res.email);
@@ -133,7 +133,7 @@ $("#search_Id").on("keypress", function (event) {
         $("#role_Type").val(res.user.role_Type);
         $("#user_Name").val(res.user.user_Name);
         $("#password").val(res.user.password);
-        let row = "<tr><td>" + res.user_Id + "</td><td>" + res.name.fullName +  "</td><td>" + res.contact_No + "</td><td>" + res.address + "</td><td>" + res.email + "</td><td>" + res.nic + "</td><td>" + res.license_No + "</td><td>" + res.user.role_Type + "</td><td>" + res.user.user_Name + "</td><td>" + res.user.password + "</td></tr>";
+        let row = "<tr><td>" + res.user_Id + "</td><td>" + res.fullName +  "</td><td>" + res.contact_No + "</td><td>" + res.address + "</td><td>" + res.email + "</td><td>" + res.nic + "</td><td>" + res.license_No + "</td><td>" + res.user.role_Type + "</td><td>" + res.user.user_Name + "</td><td>" + res.user.password + "</td></tr>";
         $("#customerTable").append(row);
       },
       error: function (error) {
@@ -270,8 +270,8 @@ $("#fullName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password")
 $("#fullName").on('keydown', function (event) {
   if (event.key === "Enter" && check(regExFullName, $("#fullName"))) {
     $("#contact_No").focus();
-  }else{
-    focusText($("#fullName"));
+  // }else{
+  //   focusText($("#fullName"));
   }
 });
 

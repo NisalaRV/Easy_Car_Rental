@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
-    <script src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.all.min.js"></script>
+
 
 
 </head>
@@ -138,7 +138,7 @@
                         </li>
 
                         <li class="text-center p-20 upgrade-btn">
-                            <a href=""
+                            <a href="../../HomePage/forms/login.html"
                                class="btn d-grid btn-danger text-white" target="_blank">
                                 Log Out</a>
                         </li>
@@ -178,74 +178,74 @@
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
-                <!-- ============================================================== -->
-                <!-- Three charts -->
-                <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="white-box">
-                            <main id="main" class="main">
+<!--            <div class="container-fluid">-->
+<!--                &lt;!&ndash; ============================================================== &ndash;&gt;-->
+<!--                &lt;!&ndash; Three charts &ndash;&gt;-->
+<!--                &lt;!&ndash; ============================================================== &ndash;&gt;-->
+<!--                <div class="row">-->
+<!--                    <div class="col-md-12">-->
+<!--                        <div class="white-box">-->
+<!--                            <main id="main" class="main">-->
 
-                                <div class="pageTitle">
-                                    <h1>User Dashboard</h1>
-                                    <section class="container-fluid mt-3" id="bookingResponse">
-                                        <nav>
+<!--                                <div class="pageTitle">-->
+<!--                                    <h1>User Dashboard</h1>-->
+<!--                                    <section class="container-fluid mt-3" id="bookingResponse">-->
+<!--                                        <nav>-->
 
-                                        </nav>
+<!--                                        </nav>-->
 
-                                        <div class="row mt-3">
-                                            <div class="card info-card">
+<!--                                        <div class="row mt-3">-->
+<!--                                            <div class="card info-card">-->
 
-                                                <!-- start button content-->
-                                                <div class="mb-3 mt-5 d-grid gap-1 d-md-flex justify-content-md-center">
-                                                    <form>
-                                                        <div class="col col-lg-12 col-sm-8">
-                                                            <label class="form-label" for="responseRentId">Rent ID<span
-                                                                    class="text-danger"></span></label>
-                                                            <input class="form-control" id="responseRentId" readonly
-                                                                   name="rent_Id"
-                                                                   placeholder="Rent ID" type="text">
-                                                        </div>
-                                                    </form>
-                                                    <button type="button" class="btn btn-danger btn mt-4 m-4  h-50" id="btnDeleteRental">
-                                                        Delete Rental
-                                                    </button>
-                                                </div>
-                                                <!-- end button content-->
+<!--                                                &lt;!&ndash; start button content&ndash;&gt;-->
+<!--                                                <div class="mb-3 mt-5 d-grid gap-1 d-md-flex justify-content-md-center">-->
+<!--                                                    <form>-->
+<!--                                                        <div class="col col-lg-12 col-sm-8">-->
+<!--                                                            <label class="form-label" for="responseRentId">Rent ID<span-->
+<!--                                                                    class="text-danger"></span></label>-->
+<!--                                                            <input class="form-control" id="responseRentId" readonly-->
+<!--                                                                   name="rent_Id"-->
+<!--                                                                   placeholder="Rent ID" type="text">-->
+<!--                                                        </div>-->
+<!--                                                    </form>-->
+<!--                                                    <button type="button" class="btn btn-danger btn mt-4 m-4  h-50" id="btnDeleteRental">-->
+<!--                                                        Delete Rental-->
+<!--                                                    </button>-->
+<!--                                                </div>-->
+<!--                                                &lt;!&ndash; end button content&ndash;&gt;-->
 
-                                                <!-- start response table content-->
-                                                <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">
-                                                    <div class="col-11 justify-content-around sectionBorder"
-                                                         style="height: 290px; background: white">
-                                                        <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">
-                                                            <table class="table table-light table-striped table-bordered table-hover">
-                                                                <thead class="text-dark table-light text-nowrap text-center  table-bordered">
-                                                                <tr>
-                                                                    <th scope="col">Rent ID</th>
-                                                                    <th scope="col">User ID</th>
-                                                                    <th scope="col">Car ID</th>
-                                                                    <th scope="col">Pick-Up Date</th>
-                                                                    <th scope="col">Return Date</th>
-                                                                    <th scope="col">Return Time</th>
-                                                                    <th scope="col">Location</th>
-                                                                    <th scope="col">Rent Type</th>
-                                                                </tr>
-                                                                </thead>
-                                                                <tbody id="tblResponse"></tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- end response table content-->
-                                            </div>
-                                        </div>
-                                    </section>
-                                </div>
-                            </main>
-                        </div>
-                    </div>
-                </div>
+<!--                                                &lt;!&ndash; start response table content&ndash;&gt;-->
+<!--                                                <div class="row mt-1 mt-md-2 mt-lg-4 mm-2 p-2 justify-content-around" style="height: 350px;">-->
+<!--                                                    <div class="col-11 justify-content-around sectionBorder"-->
+<!--                                                         style="height: 290px; background: white">-->
+<!--                                                        <div class="table-responsive customerTableDiv overflow-auto " style="height: 300px;">-->
+<!--                                                            <table class="table table-light table-striped table-bordered table-hover">-->
+<!--                                                                <thead class="text-dark table-light text-nowrap text-center  table-bordered">-->
+<!--                                                                <tr>-->
+<!--                                                                    <th scope="col">Rent ID</th>-->
+<!--                                                                    <th scope="col">User ID</th>-->
+<!--                                                                    <th scope="col">Car ID</th>-->
+<!--                                                                    <th scope="col">Pick-Up Date</th>-->
+<!--                                                                    <th scope="col">Return Date</th>-->
+<!--                                                                    <th scope="col">Return Time</th>-->
+<!--                                                                    <th scope="col">Location</th>-->
+<!--                                                                    <th scope="col">Rent Type</th>-->
+<!--                                                                </tr>-->
+<!--                                                                </thead>-->
+<!--                                                                <tbody id="tblResponse"></tbody>-->
+<!--                                                            </table>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                &lt;!&ndash; end response table content&ndash;&gt;-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </section>-->
+<!--                                </div>-->
+<!--                            </main>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
 
             </div>
             <!-- ============================================================== -->
@@ -266,12 +266,9 @@
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
+<!--    <script src="../../controller/UserDashboardController.js"></script>-->
+    <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
+
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -293,10 +290,13 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src="../../assets/vendor/apexcharts/apexcharts.min.js"></script>
+
     <script src="../../assets/vendor/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../assets/vendor/jQuery/jquery-3.6.1.min.js "></script>
+
     <script rel="script" src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.js"></script>
+    <script src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.all.min.js"></script>
+
+
 
     <script src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.js"></script>
     <script src="../../assets/vendor/sweetalert2-11.6.16/sweetalert2.all.js"></script>
@@ -305,15 +305,12 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <!-- Controller JS -->
+    <script src="../../controller/DashBoardController.js"></script>
     <script src="../../controller/UserDashboardController.js"></script>
-    <script src="../../controller/Reg_UserController.js"></script>
 
     <!-- Util JS File -->
     <script src="../../util/alert.js"></script>
     <script src="../../util/validation.js"></script>
-
-
-
 
 </body>
 

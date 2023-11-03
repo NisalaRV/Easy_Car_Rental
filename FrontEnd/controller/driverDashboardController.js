@@ -26,7 +26,7 @@ $.ajax({
             if (user === driver.user_Id) {
                 console.log(res.data)
                 $("#cusUserID").val(driver.user_Id);
-                $("#userFullName").val(driver.name.fullName);
+                $("#userFullName").val(driver.fullName);
                 $("#customerContactNo").val(driver.contact_No);
                 $("#customerAddress").val(driver.address);
                 $("#customerDriverEmail").val(driver.email);
@@ -65,6 +65,7 @@ function loadAllRent() {
         }
     });
 }
+
 //
 // $(document).ready(function () {
 //     $("#profileDetails").css('display', 'none');
