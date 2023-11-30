@@ -279,7 +279,8 @@ $.ajax({
         for (var cus of res.data) {
             if (user === cus.user_Id) {
                 $("#cusUserID").val(cus.user_Id);
-                $("#userFullName").val(cus.fullName);
+                $("#userFirstName").val(cus.name.firstName);
+                $("#userLastName").val(cus.name.lastName);
                 $("#customerContactNo").val(cus.contact_No);
                 $("#customerAddress").val(cus.address);
                 $("#customerEmail").val(cus.email);
@@ -365,8 +366,9 @@ $("#btnDeleteRental").click(function () {
 
 <!--Auto Forces Input Fields Save -->
 
-$("#userFullName").focus();
-const regExFullName = /^[A-z ]{3,20}$/;
+$("#userFirstName").focus();
+const regExFirstName = /^[A-z ]{3,20}$/;
+const regExLastName = /^[A-z ]{3,20}$/;
 const regExContactNum = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
 const regExCusAddress = /^[A-z0-9/ ]{4,30}$/;
 const regExEmailCusAddress = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -377,7 +379,10 @@ const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 
 let customerValidations = [];
 customerValidations.push({
-    reg: regExFullName, field: $('#userFullName'), error: 'Customer Full Name Pattern is Wrong'
+    reg: regExFirstName, field: $('#userFirstName'), error: 'Customer First Name Pattern is Wrong'
+});
+customerValidations.push({
+    reg: regExLastName, field: $('#userLastName'), error: 'Customer Last Name Pattern is Wrong'
 });
 customerValidations.push({
     reg: regExContactNum, field: $('#customerContactNo'), error: 'Customer Contact Number Pattern is Wrong'
@@ -401,24 +406,29 @@ customerValidations.push({
     reg: regExPassword, field: $('#customerPassword'), error: 'Customer Password Pattern is Wrong'
 });
 
-$("#userFullName,#customerContactNo,#customerAddress,#customerEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('keydown', function (event) {
+$("#userFirstName,#userLastName,#customerContactNo,#customerAddress,#customerEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('keydown', function (event) {
     if (event.key === "Tab") {
         event.preventDefault();
     }
 });
-$("#userFullName,#customerContactNo,#customerAddress,#customerEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('keyup', function (event) {
+$("#userFirstName,#userLastName,#customerContactNo,#customerAddress,#customerEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('keyup', function (event) {
     checkValidity(customerValidations);
 });
 
-$("#userFullName,#customerContactNo,#customerAddress,#customerEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('blur', function (event) {
+$("#userFirstName,#userLastName,#customerContactNo,#customerAddress,#customerEmail,#customerNic,#customerLicence,#customerUserName,#customerPassword").on('blur', function (event) {
     checkValidity(customerValidations);
 });
 
-$("#userFullName").on('keydown', function (event) {
-    if (event.key === "Enter" && check(regExFullName, $("#userFullName"))) {
-        $("#customerContactNo").focus();
+$("#userFirstName").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExFirstName, $("#userFirstName"))) {
+        $("#userLastName").focus();
     } else {
-        focusText($("#userFullName"));
+        focusText($("#userFirstName"));
+    }
+});
+$("#userLastName").on('keydown', function (event) {
+    if (event.key === "Enter" && check(regExLastName, $("#userLastName"))) {
+        focusText($("#customerContactNo"));
     }
 });
 

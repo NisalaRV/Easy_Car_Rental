@@ -55,8 +55,9 @@ function generateCustomerID() {
   });
 }
 <!--clear input fields Values Method-->
-function setTextFieldValues(fullName,contact_No, address, email, nic, license_No, nic_Img, license_Img, user_Name, password){
-  $("#fullName").val(fullName);
+function setTextFieldValues(firstName, lastName,contact_No, address, email, nic, license_No, nic_Img, license_Img, user_Name, password){
+  $("#firstName").val(firstName);
+  $("#lastName").val(lastName);
   $("#contact_No").val(contact_No);
   $("#address").val(address);
   $("#email").val(email);
@@ -67,7 +68,7 @@ function setTextFieldValues(fullName,contact_No, address, email, nic, license_No
   $("#user_Name").val(user_Name);
   $("#password").val(password);
 
-  $("#fullName").focus();
+  $("#firstName").focus();
   checkValidity(customerValidations);
   $("#btnSaveCustomer").attr('disabled',true);
 
@@ -82,7 +83,8 @@ function loadAllRegUsers() {
 
       for (let i of res.data) {
         let user_Id = i.user_Id;
-        let fullName= i.fullName;
+        let firstName = i.name.firstName;
+        let lastName = i.name.lastName;
         let contact_No = i.contact_No;
         let address = i.address;
         let email = i.email;
@@ -94,7 +96,7 @@ function loadAllRegUsers() {
         let user_Name = i.user.user_Name;
         let password = i.user.password;
 
-        let row = "<tr><td>" + user_Id + "</td><td>" + fullName +  "</td><td>" + contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic + "</td><td>" + license_No + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
+        let row = "<tr><td>" + user_Id + "</td><td>" + firstName + "</td><td>" + lastName +  "</td><td>" + contact_No + "</td><td>" + address + "</td><td>" + email + "</td><td>" + nic + "</td><td>" + license_No + "</td><td>" + role_Type + "</td><td>" + user_Name + "</td><td>" + password + "</td></tr>";
         $("#customerTable").append(row);
       }
       blindClickEvents();
@@ -121,7 +123,8 @@ $("#search_Id").on("keypress", function (event) {
       success: function (res) {
         console.log(res);
         $("#user_Id").val(res.user_Id);
-        $("#fullName").val(res.fullName);
+        $("#firstName").val(res.name.firstName);
+        $("#lastName").val(res.name.lastName);
         $("#contact_No").val(res.contact_No);
         $("#address").val(res.address);
         $("#email").val(res.email);
@@ -133,7 +136,7 @@ $("#search_Id").on("keypress", function (event) {
         $("#role_Type").val(res.user.role_Type);
         $("#user_Name").val(res.user.user_Name);
         $("#password").val(res.user.password);
-        let row = "<tr><td>" + res.user_Id + "</td><td>" + res.fullName +  "</td><td>" + res.contact_No + "</td><td>" + res.address + "</td><td>" + res.email + "</td><td>" + res.nic + "</td><td>" + res.license_No + "</td><td>" + res.user.role_Type + "</td><td>" + res.user.user_Name + "</td><td>" + res.user.password + "</td></tr>";
+        let row = "<tr><td>" + res.user_Id +"</td><td>" + res.name.firstName + "</td><td>" + res.name.lastName+  "</td><td>" + res.contact_No + "</td><td>" + res.address + "</td><td>" + res.email + "</td><td>" + res.nic + "</td><td>" + res.license_No + "</td><td>" + res.user.role_Type + "</td><td>" + res.user.user_Name + "</td><td>" + res.user.password + "</td></tr>";
         $("#customerTable").append(row);
       },
       error: function (error) {
@@ -150,20 +153,22 @@ $("#search_Id").on("keypress", function (event) {
 function blindClickEvents() {
   $("#customerTable>tr").on("click", function () {
     let user_Id = $(this).children().eq(0).text();
-    let fullName = $(this).children().eq(1).text();
-    let address = $(this).children().eq(2).text();
-    let contact_No = $(this).children().eq(3).text();
-    let email = $(this).children().eq(4).text();
-    let nic = $(this).children().eq(5).text();
-    let license_No = $(this).children().eq(6).text();
-    let role_Type = $(this).children().eq(7).text();
-    let user_Name = $(this).children().eq(8).text();
-    let password = $(this).children().eq(9).text();
+    let firstName = $(this).children().eq(1).text();
+    let lastName = $(this).children().eq(2).text();
+    let address = $(this).children().eq(3).text();
+    let contact_No = $(this).children().eq(4).text();
+    let email = $(this).children().eq(5).text();
+    let nic = $(this).children().eq(6).text();
+    let license_No = $(this).children().eq(7).text();
+    let role_Type = $(this).children().eq(8).text();
+    let user_Name = $(this).children().eq(9).text();
+    let password = $(this).children().eq(10).text();
 
-    console.log(user_Id, fullName, address, contact_No, email, nic, license_No, role_Type, user_Name, password);
+    console.log(user_Id, firstName, lastName, address, contact_No, email, nic, license_No, role_Type, user_Name, password);
 
     $("#user_Id").val(user_Id);
-    $("#fullName").val(fullName);
+    $("#firstName").val(firstName);
+    $("#lastName").val(lastName);
     $("#contact_No").val(address);
     $("#address").val(contact_No);
     $("#email").val(email);
@@ -217,8 +222,9 @@ $("#btnDeleteCustomer").click(function () {
 
 <!--Auto Forces Input Fields Save-->
 
-$("#fullName").focus();
-const regExFullName = /^[A-z ]{3,20}$/;
+$("#firstName").focus();
+const regExFirstName = /^[A-z ]{3,20}$/;
+const regExLastName = /^[A-z ]{3,20}$/;
 const regExContactNum = /^(07(0|1|2|4|5|6|7|8)[0-9]{7})$/;
 const regExCusAddress = /^[A-z0-9/ ]{4,30}$/;
 const regExEmailCusAddress = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -229,7 +235,10 @@ const regExPassword = /^([A-Z a-z]{5,15}[0-9]{1,10})$/;
 
 let customerValidations = [];
 customerValidations.push({
-  reg: regExFullName, field: $('#fullName'), error: 'Customer Full Name Pattern is Wrong'
+  reg: regExFirstName, field: $('#firstName'), error: 'Customer First Name Pattern is Wrong'
+});
+customerValidations.push({
+  reg: regExLastName, field: $('#lastName'), error: 'Customer Last Name Pattern is Wrong'
 });
 customerValidations.push({
   reg: regExContactNum, field: $('#contact_No'), error: 'Customer Contact Number Pattern is Wrong'
@@ -253,28 +262,32 @@ customerValidations.push({
   reg: regExPassword, field: $('#password'), error: 'Customer Password Pattern is Wrong'
 });
 
-$("#fullName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").on('keydown', function (event) {
+$("#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").on('keydown', function (event) {
   if (event.key === "Tab") {
     event.preventDefault();
   }
 });
 
-$("#fullName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").on('keyup', function (event) {
+$("#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").on('keyup', function (event) {
   checkValidity(customerValidations);
 });
 
-$("#fullName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").on('blur', function (event) {
+$("#firstName,#lastName,#contact_No,#address,#email,#nic,#license_No,#user_Name,#password").on('blur', function (event) {
   checkValidity(customerValidations);
 });
 
-$("#fullName").on('keydown', function (event) {
-  if (event.key === "Enter" && check(regExFullName, $("#fullName"))) {
-    $("#contact_No").focus();
-  // }else{
-  //   focusText($("#fullName"));
+$("#firstName").on('keydown', function (event) {
+  if (event.key === "Enter" && check(regExFirstName, $("#firstName"))) {
+    $("#lastName").focus();
+  } else {
+    focusText($("#firstName"));
   }
 });
-
+$("#lastName").on('keydown', function (event) {
+  if (event.key === "Enter" && check(regExLastName, $("#lastName"))) {
+    focusText($("#contact_No"));
+  }
+});
 $("#contact_No").on('keydown', function (event) {
   if (event.key === "Enter" && check(regExContactNum, $("#contact_No"))) {
     focusText($("#address"));

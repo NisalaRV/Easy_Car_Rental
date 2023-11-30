@@ -15,6 +15,7 @@ import javax.persistence.Embeddable;
 @ToString
 
 public class Name {
-    String fullName;
+    String firstName;
+    String lastName;
 
 }

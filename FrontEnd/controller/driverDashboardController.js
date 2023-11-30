@@ -26,7 +26,8 @@ $.ajax({
             if (user === driver.user_Id) {
                 console.log(res.data)
                 $("#cusUserID").val(driver.user_Id);
-                $("#userFullName").val(driver.fullName);
+                $("#userFirstName").val(driver.name.firstName);
+                $("#userLastName").val(driver.name.lastName);
                 $("#customerContactNo").val(driver.contact_No);
                 $("#customerAddress").val(driver.address);
                 $("#customerDriverEmail").val(driver.email);
