@@ -9,84 +9,149 @@
     <!-- Custom fonts for this template-->
     <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="../assets/vendor/styleslog/sb-admin-2.min.css" rel="stylesheet">
-    <link href="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.css" rel="stylesheet">
+    <!--    <link href="../assets/vendor/sweetalert2-11.6.16/sweetalert2.min.css" rel="stylesheet">-->
+    <link href="login.css" rel="stylesheet">
 
 </head>
 
-<body style="background: #35322D;">
+<!--<body style="background: #35322D;">-->
+<body>
+<div class="box">
+    <div class="elements untoldcoding"></div>
+    <div class="elements name">
+        <h2>Welcome</h2>
+    </div>
+    <div class="elements content">
 
 
-<div class="container">
-
-    <!-- Outer Row -->
-    <div class="row justify-content-center mt-5">
-
-        <div class="col-xl-10 col-lg-12 col-md-9">
-
-            <div class="card o-hidden border-0 shadow-lg my-6 sectionBorder">
-                <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block" style="background: url(../assets/images/aboutimg.jpg);background-size: cover"></div>
-                        <div class="col-lg-6">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Welcome !</h1>
-                                </div>
-                                <form class="user m-2 p-3" id="loginForm">
-                                    <div class="form-group">
-                                        <select class="form-control" id="role_Type" name="role_Type" style="border-radius: 30px;height: 3.5em">
-                                            <option value="RoleType">Choose Role</option>
-                                            <option value="ADMIN">ADMIN</option>
-                                            <option value="REGISTERED_USER">REGISTERED_USER</option>
-                                            <option value="DRIVER">DRIVER</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group mt-4">
-                                        <input type="text" class="form-control form-control-user"
-                                               id="user_Name" aria-describedby="emailHelp"
-                                               placeholder="Enter User Name...">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control form-control-user"
-                                               id="password" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="custom-control custom-checkbox small">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck">
-                                            <label class="custom-control-label" for="customCheck">Remember
-                                                Me</label>
-                                        </div>
-                                    </div>
-                                    <button  id="btnLogin" type="button" class="btn btn-primary btn-user btn-block">
-
-                                        Login
-
-                                    </button>
-
-                                </form>
-                                <hr>
-                                <div class="text-center">
-                                    <a class="small" href="">Forgot Password?</a>
-                                </div>
-                                <div class="text-center">
-                                    <a class="small" href="../index.html">Create an Account!</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <form action="" class="user m-2 p-3" id="loginForm">
+            <select class="form-control" id="role_Type" name="role_Type" style="border-radius: 30px;height: 3.5em">
+                <option value="RoleType">Choose Role</option>
+                <option value="ADMIN">ADMIN</option>
+                <option value="REGISTERED_USER">REGISTERED_USER</option>
+                <option value="DRIVER">DRIVER</option>
+            </select>
+            <div class="form-group mt-4">
+                <input aria-describedby="emailHelp" class="form-control form-control-user"
+                       id="user_Name" placeholder="Enter User Name..."
+                       type="text">
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-user" id="password"
+                       placeholder="Password" type="password">
+            </div>
+            <div class="form-group">
+                <div class="custom-control custom-checkbox small">
+                    <input class="custom-control-input" id="customCheck" type="checkbox">
+                    <label class="custom-control-label" for="customCheck">Remember
+                        Me</label>
                 </div>
             </div>
-
-        </div>
+            <button class="btn btn-primary btn-user btn-block" id="btnLogin" type="button">
+                Login
+            </button>
+            <hr>
+            <div class="text-center">
+                <a class="small" href="">Forgot Password?</a>
+            </div>
+            <div class="text-center">
+                <a class="small" href="../index.html">Create an Account!</a>
+            </div>
 
     </div>
-
+    <div class="card"></div>
 </div>
+
+<script
+        crossorigin="anonymous"
+        integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz
+2DeQkEmums41laI+eGMw95IJ15SS3g=="
+        referrerpolicy="no-referrer"
+        src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/
+vanilla-tilt.min.js"
+></script>
+<script>
+    VanillaTilt.init(document.querySelector(".box"), {
+        max: 25,
+        speed: 400,
+        glare: true,
+    });
+</script>
+<!--</body>-->
+
+
+<!--<div class="container">-->
+
+<!--    &lt;!&ndash; Outer Row &ndash;&gt;-->
+<!--    <div class="row justify-content-center mt-5">-->
+
+<!--        <div class="col-xl-10 col-lg-12 col-md-9">-->
+
+<!--            <div class="card o-hidden border-0 shadow-lg my-6 sectionBorder">-->
+<!--                <div class="card-body p-0">-->
+<!--                    &lt;!&ndash; Nested Row within Card Body &ndash;&gt;-->
+<!--                    <div class="row">-->
+<!--                        <div class="col-lg-6 d-none d-lg-block" style="background: url(../assets/images/aboutimg.jpg);background-size: cover"></div>-->
+<!--                        <div class="col-lg-6">-->
+<!--                            <div class="p-5">-->
+<!--                                <div class="text-center">-->
+<!--                                    <h1 class="h4 text-gray-900 mb-4">Welcome !</h1>-->
+<!--                                </div>-->
+<!--                                <form class="user m-2 p-3" id="loginForm">-->
+<!--                                    <div class="form-group">-->
+<!--                                        <select class="form-control" id="role_Type" name="role_Type" style="border-radius: 30px;height: 3.5em">-->
+<!--                                            <option value="RoleType">Choose Role</option>-->
+<!--                                            <option value="ADMIN">ADMIN</option>-->
+<!--                                            <option value="REGISTERED_USER">REGISTERED_USER</option>-->
+<!--                                            <option value="DRIVER">DRIVER</option>-->
+<!--                                        </select>-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group mt-4">-->
+<!--                                        <input type="text" class="form-control form-control-user"-->
+<!--                                               id="user_Name" aria-describedby="emailHelp"-->
+<!--                                               placeholder="Enter User Name...">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <input type="password" class="form-control form-control-user"-->
+<!--                                               id="password" placeholder="Password">-->
+<!--                                    </div>-->
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="custom-control custom-checkbox small">-->
+<!--                                            <input type="checkbox" class="custom-control-input" id="customCheck">-->
+<!--                                            <label class="custom-control-label" for="customCheck">Remember-->
+<!--                                                Me</label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <button  id="btnLogin" type="button" class="btn btn-primary btn-user btn-block">-->
+
+<!--                                        Login-->
+
+<!--                                    </button>-->
+
+<!--                                </form>-->
+<!--                                <hr>-->
+<!--                                <div class="text-center">-->
+<!--                                    <a class="small" href="">Forgot Password?</a>-->
+<!--                                </div>-->
+<!--                                <div class="text-center">-->
+<!--                                    <a class="small" href="../index.html">Create an Account!</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--    </div>-->
+
+<!--</div>-->
 
 <!-- Bootstrap core JavaScript-->
 
